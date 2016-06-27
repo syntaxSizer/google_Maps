@@ -69,6 +69,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
         );
 
+        mMap.setMyLocationEnabled(true);
+        mMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+            @Override
+            public void onMyLocationChange(Location location) {
+                LatLng ll = new LatLng(location.getLatitude(), location.getLongitude());
+                addPointToViewPort(ll);
+                // we only want to grab the location once, to allow the user to pan and zoom freely.
+                mMap.setOnMyLocationChangeListener(null);
+            }
+        });
+
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
