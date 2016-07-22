@@ -1,5 +1,6 @@
 package matrial.aka.maps;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -37,12 +38,16 @@ public class IntroActivity extends AppIntro {
     public void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);
         // Do something when users tap on Skip button.
+        Intent intent = new Intent(IntroActivity.this,MapsActivity.class);
+        startActivity(intent);
     }
 
     @Override
     public void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
         // Do something when users tap on Done button.
+        Intent intent = new Intent(IntroActivity.this,MapsActivity.class);
+        startActivity(intent);
     }
 
     @Override

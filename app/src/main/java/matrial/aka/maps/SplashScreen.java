@@ -1,5 +1,6 @@
 package matrial.aka.maps;
 
+import android.content.Intent;
 import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ public class SplashScreen extends AwesomeSplash {
 
 
         //Customize Path
-        configSplash.setPathSplash(SyncStateContract.Constants.DROID_LOGO); //set path String
+        //configSplash.setPathSplash(SyncStateContract.Constants.DROID_LOGO); //set path String
         configSplash.setOriginalHeight(400); //in relation to your svg (path) resource
         configSplash.setOriginalWidth(400); //in relation to your svg (path) resource
         configSplash.setAnimPathStrokeDrawingDuration(3000);
@@ -40,7 +41,7 @@ public class SplashScreen extends AwesomeSplash {
 
 
         //Customize Title
-        configSplash.setTitleSplash("My Awesome App");
+        configSplash.setTitleSplash("Google Maps");
         configSplash.setTitleTextColor(R.color.Wheat);
         configSplash.setTitleTextSize(30f); //float value
         configSplash.setAnimTitleDuration(3000);
@@ -52,6 +53,7 @@ public class SplashScreen extends AwesomeSplash {
 
     @Override
     public void animationsFinished() {
-
+        Intent intent = new Intent(SplashScreen.this,IntroActivity.class);
+        startActivity(intent);
     }
 }
