@@ -25,8 +25,8 @@ public class IntroActivity extends AppIntro {
         setSeparatorColor(Color.parseColor("#2196F3"));
 
         // Hide Skip/Done button.
-        showSkipButton(false);
-        setProgressButtonEnabled(false);
+        showSkipButton(true);
+        setProgressButtonEnabled(true);
 
         // Turn vibration on and set intensity.
         // NOTE: you will probably need to ask VIBRATE permisssion in Manifest.
@@ -38,16 +38,18 @@ public class IntroActivity extends AppIntro {
     public void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);
         // Do something when users tap on Skip button.
-        Intent intent = new Intent(IntroActivity.this,MapsActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(IntroActivity.this, MapsActivity.class);
+//        startActivity(intent);
+        finish();
     }
 
     @Override
     public void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
         // Do something when users tap on Done button.
-        Intent intent = new Intent(IntroActivity.this,MapsActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(IntroActivity.this, MapsActivity.class);
+//        startActivity(intent);
+        finish();
     }
 
     @Override
